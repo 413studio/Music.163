@@ -1,0 +1,62 @@
+
+.wrap_top{
+    position: relative;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    background-color: rgb(236, 65, 65);
+    height: 62px;
+    
+}
+
+.logo{
+   margin-left: 10px;
+}
+.logo_pic{
+    height: 45px;
+    width: 155px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    margin-left: 200px;
+    background-color: rgb(227, 62, 62);
+    height: 25px;
+    border-radius: 20px;
+}
+.search_pic{
+    height: 20px;
+    border-radius: 20px;
+}
+
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+color:    rgb(241, 159, 159);
+}
+input{
+    border: none;
+    outline: none;
+    background-color: rgb(227, 62, 62);
+    color: rgb(255, 255, 255);
+    
+}
+.user{
+    margin-left: 600px;
+    display: flex;
+    align-items: center;
+}
+.user_pic{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}
+.name{
+    font-size: small;
+    color:rgb(251,217,217);
+    margin-left: 10px;
+    line-height:34px;
+    width: 40px;
+}
+.name:hover{
+    color: aliceblue;
+}

@@ -1,0 +1,274 @@
+
+body{
+    margin: 0px;
+    height: 3300px;
+    
+}
+.wrap_main{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    
+
+}
+.wrap_left{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 180px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.left_box1{
+    display: flex;
+    width: 180px;
+    flex-direction: column;
+}
+.left_box2{
+    display: flex;
+    width: 180px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.mylike{
+    display: flex;
+    align-items: center;
+}
+.mylike>a{
+    text-decoration: none;
+    color: rgb(89,89,89);
+}
+.mylike0{
+    width: 25px;
+    height: 23px;
+}
+.mylike1{
+    width: 25px;
+    height: 23px;
+    position: relative;
+    top: 2px;
+}
+.left_box3>a{
+    font-size: small;
+}
+.my{
+    font-size: small;
+    color:rgb(153,153,153);
+    margin: 0px;
+    margin-bottom: 5px;
+}
+.Mylist{
+    font-size: small;
+    margin-left: 5px;
+}
+a,p{
+    color: rgb(89,89,89);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+a:visited{
+    color: rgb(89,89,89);
+}
+.mylike>a:hover{
+    color: black;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+.li{
+    margin-bottom: 20px;
+    list-style: none;
+    color: rgb(89,89,89);
+}
+.li0{
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 20px;
+    list-style: none;
+    color: rgb(49, 49, 49);
+}
+li:hover{
+    color: black;
+}
+.wrap_main_body{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+
+    margin-left: 80px;
+    padding-top: 20px;
+    
+}
+.main_body_head{
+    display: flex;
+    align-items: center;
+    height: 24px;
+}
+.head_click{
+    position: relative;
+    text-decoration: none;
+    line-height: 24px;
+    font-size:20px;
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+    margin-right: 50px;
+}
+.head_click::after{
+content: '';
+position: absolute;
+left: 5px;
+top: auto;
+bottom: -8px;
+right: auto;
+height: 2px;
+width: 30px;
+background-color: rgb(236, 65, 65);
+
+}
+.head_click:visited{
+    color: rgb(49, 49, 49);
+}
+.head_noclick{
+    text-decoration: none;
+    margin-right: 50px;
+    color: rgb(89,89,89);
+}
+.head_noclick:hover{
+    color: black;
+}
+.list_head_pic{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 75px;
+    width: 1000px;
+    height: 160px;
+}
+.categorys{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 1000px;
+    margin-left: 75px;
+    margin-top: 10px;
+    
+    font-size: small;
+    color:rgb(89,89,89);
+}
+.categorys div{
+    margin-left: 10px;
+}
+.categorys div:hover{
+    color: rgb(49, 49, 49);
+}
+.list{
+    margin-left: 75px;
+}
+.rec_pic{
+   
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+}
+.recommend0{
+    display: flex;
+}
+.recommend{
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.recommend>p{
+    font-size: small;
+}
+.but{
+    opacity:0;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+   
+    margin: 0px;
+    transition-duration: 500ms;
+    
+}
+.appear{
+    opacity:1;
+    transition-duration: 500ms;
+}
+.numbers{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    width: 60px;
+    height: 25px;
+    margin: 0px;
+   
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: rgb(222,221,220);
+    
+}
+.number_pic{
+    width: 16px;
+    height: 16px;
+}
+.number{
+    line-height: 22px;
+    font-size:3px;
+    height: 20px;
+    color: rgb(247,246,246);
+}
+.wrap_author{
+    position: absolute;
+    opacity:1;
+    bottom: 5px;
+    left: 5px;
+    line-height: 22px;
+}
+.author_pic{
+    width: 12px;
+    height: 10px;
+    
+}
+.author{
+    font-size:3px;
+    color: rgb(247, 247, 247);
+}
+.list_bottom{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: rgb(49, 49, 49);
+}
+.pages{
+    display: flex;
+    font-size: small;
+    color: rgb(153,153,153);
+}
+.pages>div{
+    
+    line-height: 20px;
+    text-align:center;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+}
+.page_on{
+    line-height: 20px;
+    text-align:center;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    margin-left: 5px;
+    background-color:rgb(236, 65, 65);
+    color: rgb(255, 255, 255);
+    border-radius: 3px;
+}
+
+
+
