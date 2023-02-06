@@ -1,6 +1,11 @@
 
+
+
+
+
 let timer0
 //登录弹窗样式
+
 let step = (time) => {
    
     return new Promise((resolve) =>{
@@ -89,6 +94,7 @@ async function checkStatus(key) {
     
     
     document.querySelector('.load').classList.remove('load');
+    return res.data.data;
   }
   
   //登录二维码
@@ -123,8 +129,8 @@ async function checkStatus(key) {
         timer0 = null;
         document.querySelector('.load').style.display = 'none';
         await this.getLoginStatus(statusRes.cookie);
-        sessionStorage.setItem('cookie', statusRes.cookie);
         
+        sessionStorage.setItem('cookie', statusRes.cookie);
       }
     }, 3000)
   }
