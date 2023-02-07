@@ -1,7 +1,8 @@
-document.querySelector('audio').src = sessionStorage.getItem('src')
+
+let id0 = sessionStorage.getItem('Id');
 //音频控制
 let timer 
-let time = 0;
+let time = sessionStorage.getItem('time')
 let audio = document.querySelector('audio');
 let i_ = 1;
 let songs = document.querySelectorAll('.list');
@@ -17,6 +18,10 @@ let time_dt = [];
 let t1 
 let t0
 let actual = document.querySelector('.actual')
+audio.src = sessionStorage.getItem('src');
+audio.currentTime = sessionStorage.getItem('currentTime');
+actual.style.width = sessionStorage.getItem('width')
+document.querySelector('.time0').innerHTML = sessionStorage.getItem('time0')
 //获取歌曲id
 async function get_id(){
     const get_song = await fetch(`http://localhost:3000/playlist/detail?id=${id0}`,{
@@ -72,8 +77,9 @@ async function play(){
                     let sec = '';
                     sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
                     document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-                    sessionStorage.setItem('time',baseTime.getMinutes()+':'+sec);
+                    sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec);
                     sessionStorage.setItem('width',jd);
+                    sessionStorage.setItem('currentTime',time/1000)
                     time = time + 1000;
                 } ,1000)
                 audio.src = urls[num];
@@ -97,13 +103,14 @@ async function play(){
                         timer = null;
                         actual.style.width = 0;
                         document.querySelector('.time0').innerHTML = '0:00';
-                        sessionStorage.setItem('time','0:00');
+                        sessionStorage.setItem('time0','0:00');
                         start.src = '/图片/播放2.png';
                         start.title = '播放';
                         i_ = 1
                         
                         changeSong(number,song_details);
                         audio.src = urls[number];
+                        sessionStorage.setItem('src',urls[number]);
                         audio.load();
                         setTimeout(()=>{
                             audio.play();
@@ -120,7 +127,8 @@ async function play(){
                             let sec = '';
                             sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
                             document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-                            sessionStorage.setItem('time',baseTime.getMinutes()+':'+sec);
+                            sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec)
+                            sessionStorage.setItem('currentTime',time/1000)
                             time = time + 1000;
                         } ,1000)
                         
@@ -183,13 +191,14 @@ last.addEventListener('click',()=>{
     t1 = time_dt[number];
     actual.style.width = 0;
     document.querySelector('.time0').innerHTML = '0:00';
-    sessionStorage.setItem('time','0:00');
+    sessionStorage.setItem('time0','0:00');
     start.src = '/图片/播放2.png';
     start.title = '播放';
     i_ = 1
                         
     changeSong(number,song_details);
     audio.src = urls[number];
+    sessionStorage.setItem('src',urls[number]);
     audio.load();
     setTimeout(()=>{
         audio.play();
@@ -207,8 +216,9 @@ last.addEventListener('click',()=>{
         let jd = jingdu0();
         sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
         document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-        sessionStorage.setItem('time',baseTime.getMinutes()+':'+sec);
+        sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec);
         sessionStorage.setItem('width',jd);
+        sessionStorage.setItem('currentTime',time/1000)
         time = time + 1000;
     } ,1000)
     
@@ -231,6 +241,7 @@ last.addEventListener('click',()=>{
             
             changeSong(number,song_details);
             audio.src = urls[number];
+            sessionStorage.setItem('src',urls[number]);
             audio.load();
             setTimeout(()=>{
                 audio.play();
@@ -247,7 +258,8 @@ last.addEventListener('click',()=>{
                 let sec = '';
                 sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
                 document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-                sessionStorage.setItem('time',baseTime.getMinutes()+':'+sec);
+                sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec);
+                sessionStorage.setItem('currentTime',time/1000)
                 sessionStorage.setItem('width',jd);
                 time = time + 1000;
             } ,1000)
@@ -271,13 +283,14 @@ next.addEventListener('click',()=>{
     timer = null;
     actual.style.width = 0;
     document.querySelector('.time0').innerHTML = '0:00';
-    sessionStorage.setItem('time','0:00');
+    sessionStorage.setItem('time0','0:00');
     start.src = '/图片/播放2.png';
     start.title = '播放';
     i_ = 1
                         
     changeSong(number,song_details);
     audio.src = urls[number];
+    sessionStorage.setItem('src',urls[number]);
     audio.load();
     setTimeout(()=>{
         audio.play();
@@ -295,7 +308,8 @@ next.addEventListener('click',()=>{
         let sec = '';
         sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
         document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-        sessionStorage.setItem('time',baseTime.getMinutes()+':'+sec);
+        sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec);
+        sessionStorage.setItem('currentTime',time/1000)
         sessionStorage.setItem('width',jd);
         time = time + 1000;
     } ,1000)
@@ -318,6 +332,7 @@ next.addEventListener('click',()=>{
             
             changeSong(number,song_details);
             audio.src = urls[number];
+            sessionStorage.setItem('src',urls[number]);
             audio.load();
             setTimeout(()=>{
                 audio.play();
@@ -333,8 +348,9 @@ next.addEventListener('click',()=>{
                 let sec = '';
                 sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
                 document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-                sessionStorage.setItem('time',baseTime.getMinutes()+':'+sec);
+                sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec);
                 sessionStorage.setItem('width',jd);
+                sessionStorage.setItem('currentTime',time/1000)
                 time = time + 1000;
             } ,1000)
         }
@@ -353,12 +369,14 @@ start.addEventListener('click',()=>{
         timer = setInterval( ()=>{
             let jd = this.jingdu0();
             t0 = time
+            console.log(time);
             let baseTime = new Date(time);
             let sec = '';
             sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
             document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-            sessionStorage.setItem('time',baseTime.getMinutes()+':'+sec);
+            sessionStorage.setItem ('time0',baseTime.getMinutes()+':'+sec);
             sessionStorage.setItem('width',jd);
+            sessionStorage.setItem('currentTime',time/1000)
             time = time + 1000;
         } ,1000)
         
@@ -464,19 +482,20 @@ function moveX(node){
         
         let diffX = e.clientX - 588;
         actual.style.width = diffX+'px';
-        console.log(actual.style.width);
+    
         sessionStorage.setItem('width',`${diffX/300}%`)
         
         time = (diffX/300) * t1;
-        console.log(t1);
-        console.log(time/1000);
+        
         audio.currentTime = time/1000;
         console.log(audio.currentTime);
+        sessionStorage.setItem('currentTime',time/1000)
         let baseTime = new Date(time);
         let sec = '';
         sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
         document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-        sessionStorage.setItem('time',baseTime.getMinutes()+':'+sec);
+        sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec);
+        
     }
     //点击位移
     total.addEventListener('mousedown',(e0)=>{
