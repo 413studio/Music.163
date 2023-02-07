@@ -1,5 +1,5 @@
 
-let id0 = sessionStorage.getItem('Id');
+id0 = sessionStorage.getItem('Id');
 //音频控制
 let timer 
 let time = sessionStorage.getItem('time')
@@ -50,101 +50,105 @@ async function play(){
       
         let url = song_url.data[0].url;
         urls.push(url);
-        
-        for(let num = 0;num < songs.length;num++){
+        if(song_title_new !== null){
+            for(let num = 0;num < songs.length;num++){  
             
-             // 歌曲双击获取url以便播放
-            song_title_new[num].addEventListener('dblclick',async ()=>{
-                // clearInterval(timer);
-                // timer = null;
-                actual.style.width = 0;
-                i_ = 1
-                clearInterval(timer);
-                timer = null;
-                time = 0;
-                document.querySelector('.time0').innerHTML = '0:00';
-                t1 = time_dt[num];
-                
-                // document.querySelector('.song_start').src = '/图片/正在播.png';
-                // document.querySelector('.song_start').style.display = 'block';
-                
-                timer = setInterval( ()=>{
-                    
-                    console.log(t1);
-                    t0 = time
-                    let jd = jingdu0();
-                    let baseTime = new Date(time);
-                    let sec = '';
-                    sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
-                    document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-                    sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec);
-                    sessionStorage.setItem('width',jd);
-                    sessionStorage.setItem('currentTime',time/1000)
-                    time = time + 1000;
-                } ,1000)
-                audio.src = urls[num];
-                sessionStorage.setItem('src',urls[num]);
-                audio.load();
-                setTimeout(()=>{
-                    audio.play();
-                    document.querySelector('.start').src =  '/图片/暂停.png';
-                    document.querySelector('.start').title = '暂停';
-                },500)
-                number = num;
-                //底部样式改变
-                changeSong(num,song_details)
-                //判断歌曲是否结束
-                setInterval(()=>{
-                    if(t0>=t1){
-                        number += 1
-                        t1 = time_dt[number];
-                        console.log("结束");
-                        clearInterval(timer);
-                        timer = null;
-                        actual.style.width = 0;
-                        document.querySelector('.time0').innerHTML = '0:00';
-                        sessionStorage.setItem('time0','0:00');
-                        start.src = '/图片/播放2.png';
-                        start.title = '播放';
-                        i_ = 1
-                        
-                        changeSong(number,song_details);
-                        audio.src = urls[number];
-                        sessionStorage.setItem('src',urls[number]);
-                        audio.load();
-                        setTimeout(()=>{
-                            audio.play();
-                            document.querySelector('.start').src =  '/图片/暂停.png';
-                            document.querySelector('.start').title = '暂停';
-                        },500)
-                        clearInterval(timer);
-                        time = 0;
-                        timer = setInterval( ()=>{
-                            t0 = time
-                            t1 = time_dt[number];
-                            jingdu0();
-                            let baseTime = new Date(time);
-                            let sec = '';
-                            sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
-                            document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
-                            sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec)
-                            sessionStorage.setItem('currentTime',time/1000)
-                            time = time + 1000;
-                        } ,1000)
-                        
-                    }
-                },1000)
-            })
+                // 歌曲双击获取url以便播放
+               song_title_new[num].addEventListener('dblclick',async ()=>{
+                   // clearInterval(timer);
+                   // timer = null;
+                   actual.style.width = 0;
+                   i_ = 1
+                   clearInterval(timer);
+                   timer = null;
+                   time = 0;
+                   document.querySelector('.time0').innerHTML = '0:00';
+                   t1 = time_dt[num];
+                   
+                   // document.querySelector('.song_start').src = '/图片/正在播.png';
+                   // document.querySelector('.song_start').style.display = 'block';
+                   
+                   timer = setInterval( ()=>{
+                       
+                       console.log(t1);
+                       t0 = time
+                       let jd = jingdu0();
+                       let baseTime = new Date(time);
+                       let sec = '';
+                       sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
+                       document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
+                       sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec);
+                       sessionStorage.setItem('width',jd);
+                       sessionStorage.setItem('currentTime',time/1000)
+                       time = time + 1000;
+                   } ,1000)
+                   audio.src = urls[num];
+                   sessionStorage.setItem('src',urls[num]);
+                   audio.load();
+                   setTimeout(()=>{
+                       audio.play();
+                       document.querySelector('.start').src =  '/图片/暂停.png';
+                       document.querySelector('.start').title = '暂停';
+                   },500)
+                   number = num;
+                   //底部样式改变
+                   changeSong(num,song_details)
+                   //判断歌曲是否结束
+                   setInterval(()=>{
+                       if(t0>=t1){
+                           number += 1
+                           t1 = time_dt[number];
+                           console.log("结束");
+                           clearInterval(timer);
+                           timer = null;
+                           actual.style.width = 0;
+                           document.querySelector('.time0').innerHTML = '0:00';
+                           sessionStorage.setItem('time0','0:00');
+                           start.src = '/图片/播放2.png';
+                           start.title = '播放';
+                           i_ = 1
+                           
+                           changeSong(number,song_details);
+                           audio.src = urls[number];
+                           sessionStorage.setItem('src',urls[number]);
+                           audio.load();
+                           setTimeout(()=>{
+                               audio.play();
+                               document.querySelector('.start').src =  '/图片/暂停.png';
+                               document.querySelector('.start').title = '暂停';
+                           },500)
+                           clearInterval(timer);
+                           time = 0;
+                           timer = setInterval( ()=>{
+                               t0 = time
+                               t1 = time_dt[number];
+                               jingdu0();
+                               let baseTime = new Date(time);
+                               let sec = '';
+                               sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
+                               document.querySelector('.time0').innerHTML = baseTime.getMinutes()+':'+sec;
+                               sessionStorage.setItem('time0',baseTime.getMinutes()+':'+sec)
+                               sessionStorage.setItem('currentTime',time/1000)
+                               time = time + 1000;
+                           } ,1000)
+                           
+                       }
+                   },1000)
+               })
+           }
         }
+        
     }
-    
+    console.log(song_details);
 }
 play();
  
 //时间处理函数
 function timeMake(time){
     let baseTime = new Date(time);
-    let t = Date.parse(baseTime);
+    let sec = '';
+    sec = baseTime.getSeconds()>=10 ? (sec=baseTime.getSeconds()):(sec='0'+baseTime.getSeconds())
+    let t = baseTime.getMinutes()+':'+sec;
     return t
 
 }
@@ -152,10 +156,11 @@ function timeMake(time){
 function changeSong(number,song_details){
       //底部时间变化
       document.querySelector('.time0').innerHTML = '0:00';
-      document.querySelector('.time1').innerHTML = time1[number].innerHTML;
+      let t = timeMake(time_dt[number])
+      document.querySelector('.time1').innerHTML = t;
       
     
-      sessionStorage.setItem("song_time",time1[number].innerHTML);
+      sessionStorage.setItem("song_time",t);
 
       //歌曲封面
       document.querySelector('.left_bottom>img').src = song_details[number].songs[0].al.picUrl;
@@ -360,6 +365,7 @@ next.addEventListener('click',()=>{
 
 
 start.addEventListener('click',()=>{
+    time = sessionStorage.getItem('currentTime')*1000
     if (i_ == 0){
         start.src = '/图片/暂停.png';
         start.title = '暂停';

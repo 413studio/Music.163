@@ -3,7 +3,7 @@ document.querySelector('.song_name').innerHTML = sessionStorage.getItem('song_na
 document.querySelector('.singer').innerHTML = sessionStorage.getItem('singer');
 document.querySelector('.time1').innerHTML = sessionStorage.getItem('song_time')
 document.querySelector('.time0').innerHTML = sessionStorage.getItem('time');
-document.querySelector('.actual').style.width = sessionStorage.getItem('width');
+
 document.querySelector('audio').src = sessionStorage.getItem('src')
 // 首页轮播图
 
