@@ -89,10 +89,10 @@ async function play(){
                 changeSong(num,song_details)
                 //判断歌曲是否结束
                 setInterval(()=>{
-                    if(audio.ended ===true){
+                    if(t0>=t1){
                         number += 1
                         t1 = time_dt[number];
-                        
+                        console.log("结束");
                         clearInterval(timer);
                         timer = null;
                         actual.style.width = 0;
@@ -215,8 +215,8 @@ last.addEventListener('click',()=>{
     //判断歌曲是否结束
 
     setInterval(()=>{
-        if(audio.ended === true){
-            
+        if(t0>=t1){
+            console.log("结束");
             number += 1;
             
             
@@ -303,7 +303,8 @@ next.addEventListener('click',()=>{
     //判断歌曲是否结束
     
     setInterval(()=>{
-        if(audio.ended === true){
+        if(t0>=t1){
+            console.log("结束");
             number += 1;
             t1 = time_dt[number];
             clearInterval(timer);
@@ -465,10 +466,11 @@ function moveX(node){
         actual.style.width = diffX+'px';
         console.log(actual.style.width);
         sessionStorage.setItem('width',`${diffX/300}%`)
-        console.log(diffX);
+        
         time = (diffX/300) * t1;
-        console.log(time);
-        audio.currentTime = time;
+        console.log(t1);
+        console.log(time/1000);
+        audio.currentTime = time/1000;
         console.log(audio.currentTime);
         let baseTime = new Date(time);
         let sec = '';
