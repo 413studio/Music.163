@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/mainPage/top/top.css" rel="stylesheet" type="text/css" />
+    <link href="/songAbout/songAbout/main3.css" rel="stylesheet" type="text/css" />
+    <link href="/mainPage/bottom/bottom.css" rel="stylesheet" type="text/css" />
+    <link href="/load/load.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="wrap_top">
+        <div class="logo">
+            <a href="/mainPage/mainPage.html"><img src="/pics/logo.png" alt="logo" title="网易云音乐-YY" class="logo_pic"/></a>
+        </div>
+        <div class="search">
+            <img src="/pics/search.png" class="search_pic">
+            <input type="text" placeholder="搜你想搜">
+        </div>
+        <div class="user" style="cursor:pointer">
+            <img src="/pics/user_noload.png" alt="头像" title="头像" class="user_pic">
+            <div class="name">未登录</div>
+            <img src="/pics/user_noload0.png">
+        </div>
+    </div>
+    <div class="load" style="display:none" draggable="true">
+        <img src="/pics/取消.png" alt="" class="over" style="cursor:default">
+        <div class="header">扫码登录</div>    
+        <div class="right_pic_new">
+            <img src="" alt="" class="main_img_new pic_load">
+            <span style="cursor:default">使用<span class="app">网易云音乐APP</span>扫码登录</span>
+        </div>
+        
+        <img src="/pics/load.png" alt="" class="left_pic_new">
+        
+    </div>
+    <div class="wrap_main">
+        <div class="wrap_left">
+            <div class="left_box1">
+                <span class="li">发现音乐</span>
+                <span class="li">博客</span>
+                <span class="li">视频</span>
+                <span class="li">关注</span>
+                <span class="li">直播</span>
+                <span class="li">私人FM</span>
+            </div>
+            <div class="left_box2" style="cursor:default">
+                <p class="my">我的音乐</p>
+                <div class="mylike" style="cursor:pointer">
+                    <img src="/pics/mylike.png" class="mylike0">
+                    <a href="/songAbout/songAbout.html" class="mk">我喜欢的音乐</a>
+                </div>
+                <div class="mylike" style="cursor:pointer">
+                    <img src="/pics/down.png" class="mylike0">
+                    <a>本地与下载</a>
+                </div>
+                <div class="mylike" style="cursor:pointer">
+                    <img src="/pics/recent.png" class="mylike1">
+                    <a>最近播放</a>
+                </div>
+            </div>
+            <div class="left_box3">
+                <p class="my" style="cursor:default">我的歌单</p>
+            </div>
+        </div>
+        <!-- 歌单详情页 -->
+        <div class="wrap_main_right" >
+            <div class="wrap_main_head">
+                <img src="" class="head_left_pic">
+                <div class="head_right">
+                    <div class="head_title">
+                        <span>歌单</span>
+                        <div class="title"></div>
+                    </div>
+                    <div class="creator">
+                        <img src="" class="creator_avatar">
+                        <span class="creator_name" style="cursor:default"></span>
+                        <span class="creattime"></span>
+                    </div>
+                    <div class="btn">
+                        <img src="/pics/播放3.png" alt="">
+                        <span style="cursor:pointer">播放全部</span>
+                    </div>
+                    <div class="main_bottoms">
+                        <div class="tag">标签：<a href="" style="cursor:default"></a></div>
+                        <div class="songs">
+                            <div class="songs_number">歌曲：<span></span></div>
+                            <div class="play_number">播放：<span></span></div>
+                        </div>
+                        <div class="introduction">
+                            <div class="of_hid"></div>
+                            <img src="/pics/下箭头.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_list" >
+                <div class="main_right_head">
+                    <span class="songs_list songs_list_none" style="cursor:pointer">歌曲列表</span>
+                    <div class="comment_none" style="cursor:pointer">评论</div>
+                </div>
+                <!-- 歌曲往里面塞 -->
+                <div class="list_page" >
+                    <div class="list0">
+                        <span class="song_title">标题</span>
+                        <span >歌手</span>
+                        <span >专辑</span>
+                        <span >时间</span>
+                    </div>
+                </div>
+                
+            </div>
+        
+        <!-- 评论页 -->
+        <!-- 刚开始是隐藏盒子 -->
+            <div class="comment_page" style="display: none;">
+                <div class="comment_text">
+                    <form  method="" action="" >
+                        <textarea class="textarea" style="resize: none;"></textarea>
+                    </form>
+                </div>
+                <div class="comment_btn">
+                    <form method="" action="">
+                        <input type="submit" value="评论" name="" />
+                    </form>
+                </div>
+                <div class="comment_title">精彩评论</div>
+                <!-- 评论插入 -->
+                <!-- 先给一个模板到时候删掉 -->
+                <div class="comments_hot" style="display:none;">
+                    <!-- <div class="comment_new">
+                        <img src="" class="comment_pic">
+                        <div class="main_comment">
+                            <div class="commenter">
+                                <span class="comment_id">YY：</span>
+                                <span>xxxxx</span>
+                            </div>
+                            <div class="comment_time">
+                                <span>xxxxx</span>
+                                <img src="/图片/回复.png" alt="" class="callback">
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                </div>
+                <div class="comment_title">最新评论</div>
+                <div class="comments_new">
+                    <!-- <div class="comment_new">
+                        <img src="" class="comment_pic">
+                        <div class="main_comment">
+                            <div class="commenter">
+                                <span class="comment_id">YY:</span>
+                                <span>xxxxx</span>
+                            </div>
+                        
+                            <div class="comment_time">
+                                <span>xxxxx</span>
+                                <img src="/图片/回复.png" alt="" class="callback">
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="list_bottom" style  ="display:none";>
+                <img src="/pics/上一页.png" class="last_lists">
+                <div class="pages">
+                    <div class="page0 page_on" style="cursor:default">1</div>
+                    <div class="page1" style="cursor:default">2</div>
+                    <div class="page2" style="cursor:default">3</div>
+                    <div class="page3" style="cursor:default">4</div>
+                    <div class="page4" style="cursor:default">5</div>
+                    <div class="page5" style="cursor:default">6</div>
+                    <div class="page6" style="cursor:default">7</div>
+                    <div class="page7" style="cursor:default">8</div>
+                </div>
+                <img src="/pics/下一页1.png" class="next_lists">
+            </div>
+        </div>
+        <!-- 分页 -->
+        
+    </div>
+
+    <div class="wrap_bottom" >
+            <span class="left_bottom">
+                <img src="" alt="">
+                <span class="song">
+                    <p class="song_name"></p>
+                    <p class="singer"></p>
+                </span>
+            </span>
+            <div class="main_bottom">
+                <span class="buttom">
+                    <img src="/pics/上一首.png" title="上一首" class="last">
+                    <img src="/pics/播放2.png" title="播放" class="start">
+                    <img src="/pics/下一首.png" title="下一首" class="next">
+                </span>
+                <span class="time">
+                    <p class="time0">0:00</p>
+                    
+                        <audio src="" preload="auto" ></audio>
+                   
+                    <div class="total">
+                        <div class="actual"></div>
+                        <div class="label2"></div>
+                    </div>
+                    <p class="time1"></p>
+                </span>
+            </div>
+            <div class="right_bottom">
+                
+                <div class="louder" >
+                    <div class="loud" style="display: none;"></div>
+                    <div class="label1" style="display: none;"></div>
+                </div>
+                <img src="/pics/音量.png" alt="">
+            </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="/songAbout/songAbout/main3.js"></script>
+
+    <script type="text/javascript" src="/load/load.js"></script>
+</body>
+</html>
