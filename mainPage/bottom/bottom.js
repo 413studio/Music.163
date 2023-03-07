@@ -486,7 +486,7 @@ function moveX(node){
         
         
         
-        let diffX = e.clientX - 588;
+        let diffX = e.clientX - 548;
         actual.style.width = diffX+'px';
     
         sessionStorage.setItem('width',`${diffX/300}%`)

@@ -5,6 +5,7 @@
     <link href="/songsList/pageSongs/main2.css" rel="stylesheet" type="text/css" />
     <link href="/mainPage/bottom/bottom.css" rel="stylesheet" type="text/css" />
     <link href="/load/load.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/search/search.css"  type="text/css" >
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,26 @@
             <a href="/mainPage/mainPage.html"><img src="/pics/logo.png" alt="logo" title="网易云音乐-YY" class="logo_pic"/></a>
         </div>
         <div class="search">
-            <img src="/pics/search.png" class="search_pic">
-            <input type="text" placeholder="搜你想搜">
+            <div class="search_box">
+                <img src="/pics/search.png" class="search_pic">
+                <input type="text" placeholder="搜你想搜" class="search-s">
+            </div>
+          
+            <div class="searchBox" style="display: none;">
+                <div class="searchHot">
+                    <div class="search__title">热搜榜</div>
+                    <ol class="search__li">
+                        <li class="hot">1</li>
+                        <li class="hot">2</li>
+                        <li class="hot">3</li>
+                        <li class="nohot">4</li>
+                        <li class="nohot">5</li>
+                        <li class="nohot">6</li>
+                        <li class="nohot">7</li>
+                        <li class="nohot">8</li>
+                    </ol>
+                </div>
+            </div>
         </div>
         <div class="user" style="cursor:pointer">
             <img src="/pics/user_noload.png" alt="头像" title="头像" class="user_pic">
@@ -775,20 +794,20 @@
         </div>
 
         <div class="wrap_bottom" >
-            <span class="left_bottom">
+            <div class="left_bottom">
                 <img src="" alt="">
                 <span class="song">
                     <p class="song_name"></p>
                     <p class="singer"></p>
                 </span>
-            </span>
+            </div>
             <div class="main_bottom">
-                <span class="buttom">
+                <div class="buttom">
                     <img src="/pics/上一首.png" title="上一首" class="last">
                     <img src="/pics/播放2.png" title="播放" class="start">
                     <img src="/pics/下一首.png" title="下一首" class="next">
-                </span>
-                <span class="time">
+                </div>
+                <div class="time">
                     <p class="time0">0:00</p>
                     
                         <audio src="" preload="auto" ></audio>
@@ -798,7 +817,7 @@
                         <div class="label2"></div>
                     </div>
                     <p class="time1"></p>
-                </span>
+                </div>
             </div>
             <div class="right_bottom">
                 
@@ -815,5 +834,6 @@
     <script type="text/javascript" src="/songsList/pageSongs/main2.js"></script>
     <script type="text/javascript" src="/mainPage/bottom/bottom.js"></script>
     <script type="text/javascript" src="/load/load.js"></script>
+    <script type="text/javascript" src="/search/search.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
     background-color: rgb(255,255,255);
     display: flex;
     align-items: center;
-    
+
     margin: 0px;
 }
 .left_bottom{
@@ -14,6 +14,7 @@
     width: 250px;
     display: flex;
     align-items: center;
+    margin-right: 250px;
 }
 .left_bottom>img{
     height: 40px;
@@ -42,17 +43,13 @@
 .main_bottom{
     display: flex;
     flex-direction: column;
-    width: 490px;
+    width: 400px;
     height: 50px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: space-around;
+    margin-right:350px ;
 }
 .buttom{
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    align-self: center;
     display: flex;
     justify-content: space-between;
     width: 200px;
@@ -66,23 +63,22 @@
     margin-right: 50px;
 }
 .time{
+    width: 390px;
     display: flex;
+    flex:none;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0px;
-  
+
     
 }
 .time>p{
-    width: 40px;
+    width: 35px;
     
     font-size: x-small;
     color: rgb(153,153,153);
 }
 .time0{
+    
     margin: 0px;
 }
 .time1{
@@ -101,7 +97,7 @@
 .label2{
     display: block;
     transform: translateX(-2px);
-    transform: translateY(-2px);
+    transform: translateY(-1.5px);
     width: 8px;
     height: 8px;
     border: none;
@@ -123,23 +119,21 @@
 }
 
 .right_bottom{
-    
-    position: absolute;
-    right: 100px;
-    bottom: 15px;
+    align-self: self-end;
     display: flex;
     flex-direction: column;
+    flex: none;
+    margin-bottom: 20px;
     align-items: center;
-    justify-content: flex-start;
 }
 .right_bottom>img{
     width: 20px;
     height: 20px;
-    margin-top: 10px;
+    
     z-index: 5;
 }
 .louder{
-    
+
     background-color: rgba(229, 229, 229, 0.322);
     width: 30px;
     height: 110px;

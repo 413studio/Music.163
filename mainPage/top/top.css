@@ -7,6 +7,7 @@
     justify-content:flex-start;
     background-color: rgb(236, 65, 65);
     height: 62px;
+   
     
 }
 
@@ -17,13 +18,19 @@
     height: 45px;
     width: 155px;
 }
+.search_box{
+    display:flex;
+    align-items:start;
+}
 .search{
     display: flex;
-    align-items: center;
-    margin-left: 200px;
+    flex-direction:column;
+   
+    margin-left: 150px;
     background-color: rgb(227, 62, 62);
     height: 25px;
     border-radius: 20px;
+    width:300px
 }
 .search_pic{
     height: 20px;
@@ -34,6 +41,7 @@ input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 color:    rgb(241, 159, 159);
 }
 input{
+    
     border: none;
     outline: none;
     background-color: rgb(227, 62, 62);
