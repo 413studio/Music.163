@@ -96,8 +96,8 @@ async function songs_get(){
         let song_spans = new_song.childNodes;
         song_spans[1].classList.add('song_title_new');
         song_spans[1].style.cursor = 'pointer';
-       
-       
+
+
         song_spans[1].innerHTML = song_detail.songs[0].name;
         song_spans[3].innerHTML = song_detail.songs[0].ar[0].name;
         song_spans[3].classList.add('player');
@@ -133,9 +133,9 @@ async function songs_get(){
     list_page.appendChild(list);
     //导入底部的js
     let  JSElement=document.createElement("script");
- 
+
     JSElement.setAttribute("type","text/javascript");
- 
+
     JSElement.setAttribute("src","/mainPage/bottom/bottom.js");
     
     document.body.appendChild(JSElement);
@@ -575,4 +575,4 @@ last_lists.addEventListener('click',async ()=>{
     window.scrollTo(0,0)
 })
 
- 
+

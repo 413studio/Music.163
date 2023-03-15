@@ -27,5 +27,11 @@ ol{
     margin-left:15px;
     margin-top:20px;
     list-style-type:decimal;
-    
+    font-size: small;
+}
+.hot{
+    color: rgb(51, 51, 51);
+}
+.nohot{
+    color: rgb(122, 122, 122);
 }
