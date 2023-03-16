@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/search/search.css"  type="text/css" >
     <link href="/mainPage/top/top.css" rel="stylesheet" type="text/css" />
     <link href="/search/mainSearch.css" rel="stylesheet" type="text/css" />
+    <link href="/mainPage/bottom/bottom.css" rel="stylesheet" type="text/css" />
 
     <link href="/mainPage/bottom/bottom.css" rel="stylesheet" type="text/css" />
     <link href="/load/load.css" rel="stylesheet" type="text/css" />
@@ -106,9 +107,45 @@
                 </div>
                 
             </div>
+        </div>
+        <div class="wrap_bottom" >
+            <div class="left_bottom">
+                <img src="" alt="">
+                <span class="song">
+                    <p class="song_name"></p>
+                    <p class="singer"></p>
+                </span>
+            </div>
+            <div class="main_bottom">
+                <div class="buttom">
+                    <img src="/pics/上一首.png" title="上一首" class="last">
+                    <img src="/pics/播放2.png" title="播放" class="start">
+                    <img src="/pics/下一首.png" title="下一首" class="next">
+                </div>
+                <div class="time">
+                    <p class="time0">0:00</p>
+                        <audio src="" preload="auto" ></audio>
+                    <div class="total">
+                        <div class="actual"></div>
+                        <div class="label2"></div>
+                    </div>
+                    <p class="time1"></p>
+                </div>
+            </div>
+            <div class="right_bottom">
+                
+                <div class="louder" >
+                    <div class="loud" style="display: none;"></div>
+                    <div class="label1" style="display: none;"></div>
+                </div>
+                <img src="/pics/音量.png" alt="">
+            </div>
+        </div>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="/songAbout/songAbout/main3.js"></script>
     <script type="text/javascript" src="/search/search.js"></script>
-    <script type="text/javascript" src="/load/load.js"></script>        
+    <script type="text/javascript" src="/load/load.js"></script> 
+    <script type="text/javascript" src="/search/mainSearch.js"></script>  
+    
 </body>
 </html>

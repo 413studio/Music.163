@@ -7,7 +7,7 @@ let timer0
 //登录弹窗样式
 
 let step = (time) => {
-   
+  
     return new Promise((resolve) =>{
         setTimeout(() => {
             resolve('二维码扫码登录');
@@ -15,7 +15,7 @@ let step = (time) => {
     })
 }
 async function pic_change(){
-   
+
     let a = await step(3000);
     document.querySelector('.right_pic_new').classList.add('right_pic_old');
     document.querySelector('.right_pic_new').classList.remove('right_pic_new');

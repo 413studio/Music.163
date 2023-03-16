@@ -1,3 +1,5 @@
+
+
 document.querySelector('.search-s').addEventListener('focus',()=>{
     document.querySelector('.searchBox').style.display = 'flex';
 })
@@ -21,6 +23,7 @@ async function hotSearch(){
     return data
 
 }
+let SongListDetail=[]
 async function hotResult(kw){
     const res = await fetch(`http://localhost:3000/search?keywords=${kw}`,{
         method : "get",
@@ -29,12 +32,14 @@ async function hotResult(kw){
     console.log(data);
     const {result:{songs}} = data
     console.log(songs);
+    
+    
     return songs
 }
-let songId = []
+
 //页面跳转
 function changeUrl(){
-    
+    window.location.pathname = '/search/mainSearch.html'
 }
 
 //节流函数
@@ -61,9 +66,13 @@ const search_li = document.querySelectorAll('.search__li>li')
 function searchEnter(){
     document.querySelector('.search-s').addEventListener('keypress',async (e)=>{
         if(e.keyCode === 13){
-            
-        
+            const searchWord = document.querySelector('input').value
+            SongListDetail = SongListDetail.concat(await hotResult(searchWord))
+            console.log(SongListDetail);
+            sessionStorage.setItem('SongListDetail',JSON.stringify(SongListDetail))
+            sessionStorage.setItem('kw',searchWord)
             throttle(hotResult,2000).bind(this,document.querySelector('.search-s').value);
+            changeUrl()
         }
     })
 }
@@ -78,7 +87,15 @@ async function hotSearchMake(nodes){
         nodes[i].addEventListener("click",
             throttle(hotResult,2000).bind(this,searchWord)
         )
-    
+        
+        nodes[i].addEventListener("click",async ()=>{
+            SongListDetail = SongListDetail.concat(await hotResult(searchWord))
+            console.log(SongListDetail);
+            sessionStorage.setItem('SongListDetail',JSON.stringify(SongListDetail))
+            sessionStorage.setItem('kw',searchWord)
+            changeUrl()
+        })
+        
     }
 }
 hotSearchMake(search_li);

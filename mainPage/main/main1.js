@@ -128,7 +128,7 @@ async function change_right(){
     }
     
 }
-
+console.log(window.location.pathname);
 
 async function change_left(){
     let left_pic = document.querySelector('.left_pic');
